@@ -85,7 +85,7 @@ app.get('/getproducts', async (req, res) => {
   }
 });
 app.post('/addtocart', async (req, res) => {
-  const { product } = req.body;
+  const product = req.body;
 
   try {
       const database = client.db('ThewriteInkco');
@@ -119,6 +119,51 @@ app.get('/customers', async (req, res) => {
         console.error('Error fetching users:', error);
         res.status(500).json({ message: 'Internal Server Error' });
     } 
+});
+app.delete('/deleteuser', async (req, res) => {
+  const email  = req.body;
+
+  if (!email) {
+      return res.status(400).json({ message: 'Email is required' });
+  }
+
+  try {
+    await client.connect();
+    const database = client.db('ThewriteInkco');
+      const result = await database.collection('Customsers').deleteOne({ email });
+
+      if (result.deletedCount === 0) {
+          return res.status(404).json({ message: 'User not found' });
+      }
+
+      res.status(200).json({ message: 'User deleted successfully' });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while deleting the user' });
+  }
+});
+
+app.delete('/removefromcart', async (req, res) => {
+  const productName = req.body;
+
+  if (!productName) {
+      return res.status(400).json({ message: 'Product name is required' });
+  }
+
+  try {
+    await client.connect();
+    const database = client.db('ThewriteInkco');
+      const result = await database.collection('Cart').deleteOne({ productName });
+
+      if (result.deletedCount === 0) {
+          return res.status(404).json({ message: 'Product not found' });
+      }
+
+      res.status(200).json({ message: 'Product removed successfully' });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while removing the product' });
+  }
 });
 app.get('/locations', async (req, res) => {
     try {
