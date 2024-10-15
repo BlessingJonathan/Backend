@@ -82,6 +82,29 @@ app.get('/getproducts', async (req, res) => {
     res.status(500).json({ message: 'Error fetching products' });
   }
 });
+app.post('/addtocart', async (req, res) => {
+  const { product } = req.body;
+
+  try {
+      const database = client.db('ThewriteInkco');
+      const cartCollection = database.collection('Cart');
+      let cart = await cartCollection.findOne({});
+
+      if (!cart) {
+          cart = { products: [] };
+          await cartCollection.insertOne(cart);
+      }
+      await cartCollection.updateOne(
+          {},
+          { $push: { products: product } }
+      );
+
+      res.status(201).json({ message: 'Product added to cart', cart });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error adding product to cart', error });
+  }
+});
 app.get('/customers', async (req, res) => {
     try {
         await client.connect();
