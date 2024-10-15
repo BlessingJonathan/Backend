@@ -75,10 +75,12 @@ app.get('/getproducts', async (req, res) => {
   try {
     await client.connect();
     const database = client.db('ThewriteInkco');
-    const productsCollection = database.collection('Customers')
+    const productsCollection = database.collection('Products Catalogue');
+
     const products = await productsCollection.find().toArray();
     res.json(products);
   } catch (error) {
+    console.error('Error fetching users:', error);
     res.status(500).json({ message: 'Error fetching products' });
   }
 });
@@ -118,17 +120,29 @@ app.get('/customers', async (req, res) => {
         res.status(500).json({ message: 'Internal Server Error' });
     } 
 });
-
-app.get('/orders', async (req, res) => {
+app.get('/locations', async (req, res) => {
     try {
         await client.connect();
         const database = client.db('ThewriteInkco'); // Replace with your database name
-        const orderCollection = database.collection('Cart'); // Replace with your collection name
+        const locationCollection = database.collection('Pick up Locations'); // Replace with your collection name
 
-        const orderItems = await orderCollection.find().toArray();
-        res.json(orderItems);
+        const locations = await locationCollection.find().toArray();
+        res.json(locations);
     } catch (error) {
-        console.error('Error fetching cart items:', error);
+        console.error('Error fetching Locations:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    } 
+});
+app.get('/history', async (req, res) => {
+    try {
+        await client.connect();
+        const database = client.db('ThewriteInkco'); // Replace with your database name
+        const historyCollection = database.collection('Payment History'); // Replace with your collection name
+
+        const paymentHistory = await historyCollection.find().toArray();
+        res.json(paymentHistory);
+    } catch (error) {
+        console.error('Error fetching Payment History:', error);
         res.status(500).json({ message: 'Internal Server Error' });
     } 
 });
