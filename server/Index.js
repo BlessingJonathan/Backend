@@ -124,7 +124,7 @@ app.get('/locations', async (req, res) => {
     try {
         await client.connect();
         const database = client.db('ThewriteInkco'); // Replace with your database name
-        const locationCollection = database.collection('Pick up Locations'); // Replace with your collection name
+        const locationCollection = database.collection('Pick-up-Locations'); // Replace with your collection name
 
         const locations = await locationCollection.find().toArray();
         res.json(locations);
@@ -137,7 +137,7 @@ app.get('/history', async (req, res) => {
     try {
         await client.connect();
         const database = client.db('ThewriteInkco'); // Replace with your database name
-        const historyCollection = database.collection('Payment History'); // Replace with your collection name
+        const historyCollection = database.collection('Payment-History'); // Replace with your collection name
 
         const paymentHistory = await historyCollection.find().toArray();
         res.json(paymentHistory);
