@@ -1,5 +1,5 @@
 
- require("dotenv").config();
+const dotenv= require("dotenv").config();
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const app = express();
@@ -109,7 +109,7 @@ app.get('/orders', async (req, res) => {
 
 
 
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 connectToMongo();
