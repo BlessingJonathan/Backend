@@ -73,7 +73,10 @@ app.post('/login', async (req, res) => {
 });
 app.get('/getproducts', async (req, res) => {
   try {
-    const products = await db.collection('Products Catalogue').find({}).toArray();
+    await client.connect();
+    const database = client.db('ThewriteInkco');
+    const productsCollection = database.collection('Customers')
+    const products = await productsCollection.find().toArray();
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching products' });
