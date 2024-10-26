@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6a6ab618.css",
+    "main.js": "/static/js/main.b53b2eae.js",
+    "static/js/453.e7e9f32a.chunk.js": "/static/js/453.e7e9f32a.chunk.js",
+    "static/media/Office-Supplies.jpg": "/static/media/Office-Supplies.bcac9088aec7106ef0c8.jpg",
+    "static/media/Falcon-Impact-6-Piece-Office-Set-Coimbra.webp": "/static/media/Falcon-Impact-6-Piece-Office-Set-Coimbra.7ec834bd7aae885c61eb.webp",
+    "static/media/School-Stationery.jpg": "/static/media/School-Stationery.0dc7af470003d572c950.jpg",
+    "static/media/staionery-background.jpg": "/static/media/staionery-background.dd61314b2f956a1968d0.jpg",
+    "static/media/5-tier-tray.jpg": "/static/media/5-tier-tray.69cc2d7bafb9c2057610.jpg",
+    "static/media/Brands.png": "/static/media/Brands.41ec3122d523d4d3d429.png",
+    "static/media/Business-Foler-Stationery.jpg": "/static/media/Business-Foler-Stationery.d00ab2d5a0d6eb2bdddf.jpg",
+    "static/media/Double-sided-Whiteboard.jpg": "/static/media/Double-sided-Whiteboard.b07f29bf08f130189090.jpg",
+    "static/media/Mondi-Officepaper.jpg": "/static/media/Mondi-Officepaper.2908aab96a9475102825.jpg",
+    "static/media/File-Folder.jpg": "/static/media/File-Folder.80eb3b223009eae94a05.jpg",
+    "static/media/Pro-Student-Desk.jpg": "/static/media/Pro-Student-Desk.c22abf842951e3ef23e2.jpg",
+    "static/media/Kids-set.webp": "/static/media/Kids-set.464883b66e3a487b1fad.webp",
+    "static/media/Colorpens.webp": "/static/media/Colorpens.01edb50167c4de3faa3c.webp",
+    "static/media/Flipfile.webp": "/static/media/Flipfile.35eafa35dad527a686f9.webp",
+    "static/media/Waxcrayons.webp": "/static/media/Waxcrayons.752faa82b75bf142e5cc.webp",
+    "static/media/Notebook.webp": "/static/media/Notebook.d661dd04177e5dd0213e.webp",
+    "static/media/Stationery-set.webp": "/static/media/Stationery-set.109c0db64c0aa1be7d85.webp",
+    "static/media/Redbat-set.webp": "/static/media/Redbat-set.0cc25e15ba425e7b48fe.webp",
+    "static/media/OfficeChair.webp": "/static/media/OfficeChair.fdb2589b0bc1e0d59be0.webp",
+    "static/media/A4-Book.webp": "/static/media/A4-Book.3e5b6911e9d20f843711.webp",
+    "static/media/ClassicNotebook.webp": "/static/media/ClassicNotebook.dccc4a085a90261083c1.webp",
+    "index.html": "/index.html",
+    "main.6a6ab618.css.map": "/static/css/main.6a6ab618.css.map",
+    "main.b53b2eae.js.map": "/static/js/main.b53b2eae.js.map",
+    "453.e7e9f32a.chunk.js.map": "/static/js/453.e7e9f32a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a6ab618.css",
+    "static/js/main.b53b2eae.js"
+  ]
+}
